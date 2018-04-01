@@ -1,0 +1,24 @@
+{
+  "name": "BT_MANAGEMENT",
+  "homepage": "wwww.bt.com",
+  "authors": [
+    "santosh"
+  ],
+  "description": "THIS IS SIMPLE PROJECT",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "^1.6.9",
+    "angular-route": "^1.6.9",
+    "angular-ui-router": "^1.0.15",
+    "components-font-awesome": "^5.0.6"
+  }
+}
