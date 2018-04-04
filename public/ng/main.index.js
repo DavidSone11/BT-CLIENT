@@ -6,14 +6,19 @@
     'ngRoute',
     'ngAnimate'
   ]);
-app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider',
-    function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider) {
+app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider','$locationProvider',
+    function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider,$locationProvider) {
 
         $ocLazyLoadProvider.config({
             debug: false,
             events: true,
         });
 
+        $locationProvider.html5Mode({
+            enabled: false,
+            requireBase: false
+          });
+        //Remove the '#' from URL.  
 //   $urlRouterProvider.otherwise('/home/dashboard');
     $urlRouterProvider.otherwise('/login');
   $stateProvider
@@ -26,6 +31,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$htt
                       name: 'BTAPP',
                       files: [
                           'ng/directives/home/home.directive.js',
+                          
                           
                       ]
                   });
@@ -58,6 +64,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$htt
                     files: [
                         'ng/directives/login/login.directive.js',
                         'ng/directives/login/login.controller.js',
+                        'ng/factory/auth.factory.js',
                         
                     ]
                 });
@@ -78,7 +85,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$htt
             }
         }
     });
-    
+   
     }]);
 
 })();
