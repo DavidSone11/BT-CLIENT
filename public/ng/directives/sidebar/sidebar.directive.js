@@ -4,7 +4,16 @@ app.directive('sidebar', ['$compile', function($compile) {
             restrict: 'E',
             templateUrl: 'ng/directives/sidebar/sidebar.tmpl.html',
             replace: true,
-            controller: function($scope,$location,$state) {
+            controller: function($scope,$location,$state,authFactory) {
+
+                $scope.logout = function(){
+
+                    authFactory.dologout().then(function success(res){
+
+                    },function error(err){
+                        
+                    })
+                }
 
               
 

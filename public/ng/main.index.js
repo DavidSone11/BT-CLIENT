@@ -1,4 +1,4 @@
-(function() {
+(function(window) {
   'use strict';
   var app = angular.module("BTAPP", [
     'ui.router',
@@ -47,8 +47,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$htt
                     files: [
                         'ng/directives/dashboard/dashboard.directive.js',
                         'ng/directives/sidebar/sidebar.directive.js',
-                        'ng/directives/header/header.directive.js'
-                        
+                        'ng/directives/header/header.directive.js',
+                        'ng/factory/auth.factory.js',
                     ]
                 });
             }
@@ -88,5 +88,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$htt
    
     }]);
 
-})();
+window.app = app;
+
+}(window));
 
