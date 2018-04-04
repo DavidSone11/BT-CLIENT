@@ -8,7 +8,7 @@ app.controller('loginCtrl', function ($scope, $state) {
 
         if (username != 'undefined' || password != 'undefined') {
           //  $state.go("home.dashoard");
-          angular.element(document.querySelector('[id="dim_wrapper"]')).addClass('dim');
+          //angular.element(document.querySelector('[id="dim_wrapper"]')).addClass('dim');
         }
 
 

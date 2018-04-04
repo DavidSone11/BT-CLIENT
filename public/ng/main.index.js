@@ -3,7 +3,8 @@
   var app = angular.module("BTAPP", [
     'ui.router',
     'oc.lazyLoad',
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate'
   ]);
 app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$httpProvider',
     function ($stateProvider, $urlRouterProvider, $ocLazyLoadProvider, $httpProvider) {
