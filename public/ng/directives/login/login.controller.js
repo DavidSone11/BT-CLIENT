@@ -1,19 +1,22 @@
 var app = angular.module('BTAPP');
-app.controller('loginCtrl', function ($scope, $state,authFactory) {
+app.controller('loginCtrl', function ($scope, $state, $window,authFactory) {
 
 
-    
+
 
     $scope.login = function (username, password) {
 
         if (username != 'undefined' || password != 'undefined') {
-          //  $state.go("home.dashoard");
-          //angular.element(document.querySelector('[id="dim_wrapper"]')).addClass('dim');
+            
+            //angular.element(document.querySelector('[id="dim_wrapper"]')).addClass('dim');
 
-          authFactory.dologin(username,password).then(function success(res){
-              console.log(res);
+            authFactory.dologin(username, password).then(function success(res) {
+                $window.sessionStorage.setItem("token", res.data.token);
+                $window.sessionStorage.setItem("username", res.data.username);
+                $window.sessionStorage.setItem("role", res.data.role);
+                 $state.go("home.dashoard");
 
-          });
+            });
         }
 
 
