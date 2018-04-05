@@ -20,7 +20,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$htt
           });
         //Remove the '#' from URL.  
 //   $urlRouterProvider.otherwise('/home/dashboard');
-    $urlRouterProvider.otherwise('/login');
+    $urlRouterProvider.otherwise('/login02');
   $stateProvider
       .state('home', {
           template: '<home></home>',
@@ -65,6 +65,23 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$htt
                         'ng/directives/login/login.directive.js',
                         'ng/directives/login/login.controller.js',
                         'ng/factory/auth.factory.js',
+                        
+                    ]
+                });
+            }
+        }
+    }).state('login02', {
+        template: '<login02></login02>',
+        url: '/login02',
+        controller:'login02Ctrl',
+        resolve: {
+            loadMyDirectives: function ($ocLazyLoad) {
+                return $ocLazyLoad.load({
+                    name: 'BTAPP',
+                    files: [
+                        'ng/directives/login_02/login02.directive.js',
+                        'ng/directives/login_02/login02.controller.js',
+                        
                         
                     ]
                 });
