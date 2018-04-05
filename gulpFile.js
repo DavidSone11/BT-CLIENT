@@ -20,6 +20,7 @@ var uglify = require('gulp-uglify');
 var merge = require('merge-stream');
 var fs = require('fs');
 var fontmin = require('gulp-fontmin');
+var cssnano = require('gulp-cssnano');
 
 
 gulp.task("minify-css", function (e) {
@@ -85,6 +86,13 @@ gulp.task('ng', function () {
 //         .pipe(gulp.dest('public/bower_components/'));
 // });
 
+gulp.task('min-sass', function () {
+    return gulp.src('public_dev/sass/**/*.scss')
+        .pipe(concat('main.style.min.css'))
+        .pipe(sass())
+        .pipe(gulp.dest('public/stylesheets/'));
+});
+
 gulp.task('minify-js', function () {
     return gulp.src('public_dev/js/**/*.js')
         .pipe(uglify())
@@ -100,27 +108,35 @@ gulp.task('build-minify-styles', function () {
         .pipe(less())
         .pipe(concat('less-files.less'));
 
-    var scssStream = gulp.src(['public_dev/sass/**/*.scss'])
-        .pipe(sass())
-        .pipe(concat('scss-files.scss'));
+    // var scssStream = gulp.src(['public_dev/sass/**/*.scss'])
+    //     .pipe(sass())
+    //     .pipe(concat('scss-files.scss'));
 
     var cssStream = gulp.src(['public_dev/css/**/*.css'])
         .pipe(concat('css-files.css'));
 
-    var mergedStream = merge(lessStream, scssStream, cssStream)
-        .pipe(sourcemaps.init())
-        .pipe(autoprefixer())
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(concat('main.style.min.css'))
-         .pipe(minifyCSS({ compatibility: 'ie8' }))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest('public/stylesheets/'));
+    // var mergedStream = merge(lessStream, scssStream, cssStream)
+    //     .pipe(sourcemaps.init())
+    //     .pipe(autoprefixer())
+    //     .pipe(rename({ suffix: '.min' }))
+    //     .pipe(concat('main.style.min.css'))
+    //      .pipe(minifyCSS({ compatibility: 'ie8' }))
+    //     .pipe(sourcemaps.write())
+    //     .pipe(gulp.dest('public/stylesheets/'));
+
+
+    var mergedStream = merge(lessStream,cssStream)
+    .pipe(concat('main.style.min.css'))
+    .pipe(cssnano())
+    .pipe(gulp.dest('public/stylesheets/'));
     return mergedStream;
 });
 
 gulp.task('watch',['browser-sync', 'build-minify-styles', 'ng'] ,function () {
     gulp.watch("public_dev/css/**/*.css", ['build-minify-styles']);
     gulp.watch("public_dev/sass/**/*.scss", ['build-minify-styles']);
+    gulp.watch("public_dev/sass/**/*.scss", ['min-sass']);
+    
     gulp.watch("public_dev/less/**/*.less", ['build-minify-styles']);
     gulp.watch("public_dev/ng/**/*", ['ng']);
     gulp.watch("public_dev/images/*.*", ['minify-image']);
@@ -134,4 +150,5 @@ gulp.task('clean', function () {
 
 });
 
-gulp.task("default", ['build-minify-styles', 'minify-image','min-fonts', 'minify-js','ng','watch', 'browser-sync']);
+gulp.task("default", ['min-sass','build-minify-styles', 'minify-image','min-fonts', 'minify-js','ng','watch', 'browser-sync']);
+// gulp.task("default", ['build-minify-styles', 'minify-image','min-fonts', 'minify-js','ng','watch', 'browser-sync']);
