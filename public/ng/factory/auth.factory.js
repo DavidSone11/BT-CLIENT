@@ -22,7 +22,7 @@ app.factory('authFactory', function ($window, $http) {
                 $window.sessionStorage.removeItem("role");
             }
             return (this.isLoggedIn) ? this.isLoggedIn : false;
-           // return this.isLoggedIn;
+           
         },
 
         dologin: function (username, password) {
@@ -33,9 +33,7 @@ app.factory('authFactory', function ($window, $http) {
         },
 
         dologout: function () {
-
-
-
+            return $http.get("http://localhost:4000/logout");
         }
 
     }
