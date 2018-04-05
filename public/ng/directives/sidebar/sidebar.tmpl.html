@@ -1,32 +1,29 @@
 <div>
         <section id="main-sidebar">
+                <nav>
+                        <a ui-sref="home.dashoard" class="customactive">
+                                <li class="fa fa-user-circle-o fa-fw fa-1x" style="color:white" aria-hidden="true"></li>
+                                DASHBOARD</a>
+                        <a ui-sref="home.user">
+                                <li class="fa fa-user-circle-o fa-fw fa-1x" aria-hidden="true" style="color:white"></li>
+                                USER</a>
+                        <a ui-sref="home.plan">
+                                <li class="fa fa-user-circle-o fa-fw fa-1x" aria-hidden="true" style="color:white"></li>
+                                USER PLAN</a>
 
-                <ul>
-                        <li ui-sref-active="custom-active">
-                                <a ui-sref="home.dashoard">
-                                        <span class="fa fa-user-circle-o fa-fw fa-1x" style="color:white" aria-hidden="true"></span>
-                                        DASH BOARD</a>
-                        </li>
-                        
+                        <a ui-sref="home.plan">
+                                <li class="fa fa-user-circle-o fa-fw fa-1x" aria-hidden="true" style="color:white"></li>
+                                TRAIN</a>
 
-                        <li ui-sref-active="custom-active">
-                                <a ui-sref="home.user">
-                                        <span class="fa fa-user-circle-o fa-fw fa-1x" aria-hidden="true" style="color:white"></span>
-                                        USER</a>
-                        </li>
+                        <a ui-sref="home.plan">
+                                <li class="fa fa-user-circle-o fa-fw fa-1x" aria-hidden="true" style="color:white"></li>
+                                TRAIN STATION</a>
+                        <a href="javascript:void(0)" ng-click="logout()">
+                                <li class="fa fa-user-circle-o fa-fw fa-1x" aria-hidden="true" style="color:white"></li>
+                                LOGOUT</a>
 
-                        <li ui-sref-active="custom-active">
-                                <a ui-sref="home.plan">
-                                        <span class="fa fa-user-circle-o fa-fw fa-1x" aria-hidden="true" style="color:white"></span>
-                                        USER PLAN</a>
-                        </li>
 
-                        <li ui-sref-active="custom-active">
-                                <a href="javascript:void(0)" ng-click="logout()">
-                                        <span class="fa fa-user-circle-o fa-fw fa-1x" aria-hidden="true" style="color:white"></span>
-                                        LOGOUT</a>
-                        </li>
-                </ul>
+                </nav>
 
         </section>
 </div>
