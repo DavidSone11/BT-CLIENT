@@ -96,15 +96,15 @@ gulp.task('minify-js', function () {
 
 gulp.task('build-minify-styles', function () {
 
-    var lessStream = gulp.src(['public_dev/less/**/*.*'])
+    var lessStream = gulp.src(['public_dev/less/**/*.less'])
         .pipe(less())
         .pipe(concat('less-files.less'));
 
-    var scssStream = gulp.src(['public_dev/sass/**/*.*'])
+    var scssStream = gulp.src(['public_dev/sass/**/*.scss'])
         .pipe(sass())
         .pipe(concat('scss-files.scss'));
 
-    var cssStream = gulp.src(['public_dev/css/**/*.*'])
+    var cssStream = gulp.src(['public_dev/css/**/*.css'])
         .pipe(concat('css-files.css'));
 
     var mergedStream = merge(lessStream, scssStream, cssStream)
@@ -119,9 +119,9 @@ gulp.task('build-minify-styles', function () {
 });
 
 gulp.task('watch',['browser-sync', 'build-minify-styles', 'ng'] ,function () {
-    gulp.watch("public_dev/css/**/*.*", ['build-minify-styles']);
-    gulp.watch("public_dev/sass/**/*.*", ['build-minify-styles']);
-    gulp.watch("public_dev/less/**/*.*", ['build-minify-styles']);
+    gulp.watch("public_dev/css/**/*.css", ['build-minify-styles']);
+    gulp.watch("public_dev/sass/**/*.scss", ['build-minify-styles']);
+    gulp.watch("public_dev/less/**/*.less", ['build-minify-styles']);
     gulp.watch("public_dev/ng/**/*", ['ng']);
     gulp.watch("public_dev/images/*.*", ['minify-image']);
     gulp.watch("public_dev/js/*.js", ['minify-js']);
