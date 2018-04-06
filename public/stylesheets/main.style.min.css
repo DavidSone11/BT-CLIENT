@@ -2,19 +2,143 @@
 .main-page-wrapper {
   width: 100%; }
 
+.page-wrapper-content {
+  margin-left: 300px;
+  padding: 10px; }
+
 .main-page-wrapper {
   width: 100%; }
 
+.page-wrapper-content {
+  margin-left: 300px;
+  padding: 10px; }
+
+.login-main-container {
+  margin: 0;
+  padding: 0;
+  background: url(../../../images/435564.jpg) no-repeat;
+  background-position: center;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%; }
+
+.login-login-box {
+  position: absolute;
+  width: 350px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.login-login-box h1 {
+  color: #fff;
+  font-size: 40px;
+  float: left;
+  margin-bottom: 15px;
+  padding: 13px; }
+
+.txtbox {
+  width: 100%;
+  overflow: hidden;
+  font-size: 20px;
+  padding: 8px 0;
+  margin: 8px 0;
+  border-bottom: 1px solid #ccff00; }
+
+.txtbox i {
+  width: 20px;
+  float: left;
+  text-align: center;
+  color: #fff; }
+
+.txtbox input {
+  border: none;
+  outline: 0;
+  background: 0 0;
+  color: #fff;
+  font-size: 18px;
+  width: 80%;
+  float: left;
+  margin: 0 10px; }
+
+input[type=submit] {
+  border: 1px solid #ccff00;
+  background: transparent;
+  color: #fff;
+  font-size: 18px;
+  width: 100%;
+  padding: 5px;
+  margin: 15px 0;
+  cursor: pointer; }
+
+.login-login-box .avatar {
+  width: 100px;
+  height: 100px;
+  margin: 0 120px;
+  opacity: 0.5; }
+
 * {
   box-sizing: border-box; }
+
+html {
+  overflow: hidden; }
 
 body {
   margin: 0;
   padding: 0;
   background: #D3D3D3; }
 
-html {
-  overflow: hidden; }
+header {
+  margin-left: 280px;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15); }
+  header .search-area .fa {
+    color: #e0e1e2; }
+  header .search-area input[type=text] {
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    font-weight: 100;
+    border-bottom: 2px solid green !important;
+    transition: all 0.5s ease-in-out; }
+  header .user-area {
+    float: right;
+    padding: 10px; }
+    header .user-area a {
+      display: inline-block;
+      padding-right: 20px;
+      text-decoration: none;
+      vertical-align: top;
+      height: 20px; }
+      header .user-area a.notification {
+        position: relative; }
+        header .user-area a.notification .circle {
+          display: inline-block;
+          background: red;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          font-size: 12px;
+          color: #fff;
+          text-align: center;
+          position: absoulte;
+          top: -5px;
+          left: 5px; }
+    header .user-area .user-img {
+      background: url(../../../images/128.jpg) no-repeat center center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-block; }
+    header .user-area .fa-caret-down {
+      position: relative;
+      top: -5px; }
 
 .login-main-container {
   margin: 0;
@@ -116,56 +240,3 @@ input[type=submit] {
           width: 30px;
           position: relative;
           top: 2px; }
-
-header {
-  margin-left: 280px;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.15); }
-  header .search-area .fa {
-    color: #e0e1e2; }
-  header .search-area input[type=text] {
-    background: none;
-    outline: none;
-    border: none;
-    font-size: 1.2rem;
-    padding: 10px;
-    font-weight: 100;
-    border-bottom: 2px solid green !important;
-    transition: all 0.5s ease-in-out; }
-  header .user-area {
-    float: right;
-    padding: 10px; }
-    header .user-area a {
-      display: inline-block;
-      padding-right: 20px;
-      text-decoration: none;
-      vertical-align: top;
-      height: 20px; }
-      header .user-area a.notification {
-        position: relative; }
-        header .user-area a.notification .circle {
-          display: inline-block;
-          background: red;
-          width: 10px;
-          height: 10px;
-          border-radius: 50%;
-          font-size: 12px;
-          color: #fff;
-          text-align: center;
-          position: absoulte;
-          top: -5px;
-          left: 5px; }
-    header .user-area .user-img {
-      background: url(../../../images/128.jpg) no-repeat center center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      display: inline-block; }
-    header .user-area .fa-caret-down {
-      position: relative;
-      top: -5px; }
