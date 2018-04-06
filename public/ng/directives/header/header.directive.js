@@ -1,5 +1,5 @@
 var app = angular.module('BTAPP');
-app.directive('header', ['$compile', function($compile) {
+app.directive('mainHeader', ['$compile', function($compile) {
         return {
             restrict: 'E',
             templateUrl: 'ng/directives/header/header.tmpl.html',
