@@ -60,7 +60,8 @@ gulp.task('minify-image', () =>
 gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
-            baseDir: "public"
+            baseDir: "public",
+            notify: false
         }
     });
 });
@@ -134,7 +135,7 @@ gulp.task('build-minify-styles', function () {
 
 gulp.task('watch',['browser-sync', 'build-minify-styles', 'ng'] ,function () {
     gulp.watch("public_dev/css/**/*.css", ['build-minify-styles']);
-    gulp.watch("public_dev/sass/**/*.scss", ['build-minify-styles']);
+    // gulp.watch("public_dev/sass/**/*.scss", ['build-minify-styles']);
     gulp.watch("public_dev/sass/**/*.scss", ['min-sass']);
     
     gulp.watch("public_dev/less/**/*.less", ['build-minify-styles']);
