@@ -79,6 +79,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$ocLazyLoadProvider', '$htt
                     name: 'BTAPP',
                     files: [
                         'ng/directives/User/user.directive.js',
+                        'ng/custom-directives/validation.directive.js',
                         
                     ]
                 });

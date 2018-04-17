@@ -147,7 +147,7 @@ gulp.task('watch',['browser-sync', 'build-minify-styles', 'ng'] ,function () {
 });
 
 gulp.task('clean', function () {
-    return del.sync(['public/stylesheets/**/*.css', 'public/javascripts/**/*.js','public/images/**/*.*','public/ng/**/*','public/ng/public/**/*.html','!public/bower_components/**/*']);
+    return del.sync(['public/stylesheets/**/*.css', 'public/javascripts/**/*.js','public/images/**/*.*','public/ng/**/*','public/ng/**/*.html','!public/bower_components/**/*']);
 
 });
 
