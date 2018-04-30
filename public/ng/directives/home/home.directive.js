@@ -1,4 +1,4 @@
-angular.module('BTAPP')
+angular.module('btApp')
     .directive('home', ['$compile', function($compile) {
         return {
             restrict: 'E',

@@ -1,5 +1,5 @@
-var app = angular.module('BTAPP');
-app.controller('loginCtrl', function ($scope, $state, $window, authFactory) {
+var app = angular.module('btApp');
+app.controller('LoginController', function ($scope, $state, $window, authFactory) {
 
 
 

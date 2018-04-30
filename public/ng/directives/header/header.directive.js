@@ -1,4 +1,4 @@
-var app = angular.module('BTAPP');
+var app = angular.module('btApp');
 app.directive('mainHeader', ['$compile', function($compile) {
         return {
             restrict: 'E',

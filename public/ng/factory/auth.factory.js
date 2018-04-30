@@ -1,4 +1,4 @@
-var app = angular.module('BTAPP');
+var app = angular.module('btApp');
 app.factory('authFactory', function ($window, $http) {
 
 
