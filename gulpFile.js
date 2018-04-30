@@ -60,7 +60,7 @@ gulp.task('minify-image', () =>
 gulp.task('browser-sync', function () {
     browserSync.init({
         server: {
-            baseDir: "public",
+            baseDir: "./public",
             notify: false
         }
     });

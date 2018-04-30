@@ -61,6 +61,7 @@
                     template: '<login></login>',
                     url: '/login',
                     controller: 'LoginController',
+                    secure: true,
                     resolve: {
                         loadMyDirectives: function ($ocLazyLoad) {
                             return $ocLazyLoad.load({
